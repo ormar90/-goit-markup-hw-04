@@ -11,6 +11,9 @@
   --gray-background: #f5f4fa;
   --border-color: #eeeeee;
 
+  --icon-color: #AFB1B8;
+  --footer-icon-bg: rgba(255, 255, 255, 0.1);
+
   --box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
   --button-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -138,14 +141,17 @@ header
 
 .nav-inner-item {
   color: var(--text-color);
-  display: block;
+  display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
 }
 
-.nav-item.active {
-  color: var(--accent-color);
+.nav-inner-icon {
+  margin-right: 10px;
 }
+
+
 
 .nav-item:hover,
 .nav-item:focus,
@@ -154,16 +160,31 @@ header
   color: var(--accent-color);
 }
 
-.nav-inner:active {
+.nav-inner-item:hover .nav-inner-icon,
+.nav-inner-item:focus .nav-inner-icon {
+  fill: var(--accent-color);
+}
+
+.nav-item.active {
   color: var(--accent-color);
 }
+
 
 /* hero */
 
 .hero {
-  padding-top: 200px;
-  padding-bottom: 200px;
   background-color: var(--dark-background-color);
+  background-image: linear-gradient(
+    rgba(47, 48, 58, 0.4), 
+    rgba(47, 48, 58, 0.4));
+  background-image: url(../images/hero-img.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 200px;
+  padding-bottom: 200px;  
 }
 
 .hero-title {
@@ -204,6 +225,19 @@ header
 }
 
 /* specifics */
+
+.specifics-icon {
+  background-color: var(--gray-background);
+  border-radius: 4px;
+  height: 120px;
+  width: 270px;
+  padding: 25px 100px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .specifics-list {
   display: flex;
   margin-right: calc(-1 * var(--img-gap));
@@ -303,12 +337,88 @@ header
   line-height: 1.2;
   text-align: center;
   letter-spacing: 0.03em;
+  margin-bottom: 16px;
 }
+
+.team-follow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.follow-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--basic-white-color);
+  color: var(--icon-color);
+}
+
+.team-icon {
+  fill: currentColor;
+}
+
+.team-follow-item>.follow-link:hover,
+.team-follow-item>.follow-link:focus {
+  background-color: var(--accent-color);
+  color: var(--basic-white-color);
+}
+
+/* clients */
+
+.clients-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--header-color);
+  margin-bottom: 50px;
+}
+
+.clients-list {
+  display: flex;
+  margin-right: calc(-1 * var(--img-gap));
+}
+
+.clients-item {
+  flex-basis: calc(100% / 6 - var(--img-gap));
+  margin-right: var(--img-gap);
+}
+
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px; 
+  height: 92px;
+  border: 1px solid #AFB1B8;
+  border-radius: 4px;
+  background-color: var(--basic-white-color);
+  color: var(--icon-color);
+}
+
+.clients-icon {
+  fill: currentColor;
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
 /* footer */
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: var(--dark-background-color);
+}
+
+.footer .container {
+  display: flex;
 }
 
 .footer-logo {
@@ -353,6 +463,40 @@ header
 .footer-addres:focus {
   color: var(--accent-color);
 }
+
+.footer-follow {
+  margin-left: 70px;
+}
+
+.footer-follow-paragraph {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--basic-white-color);
+}
+
+.footer-follow-list {
+  display: flex;
+}
+
+.footer-follow-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-follow-item>.follow-link {
+  background-color: var(--footer-icon-bg);
+  fill: var(--basic-white-color);
+}
+
+.footer-follow-item>.follow-link:hover,
+.footer-follow-item>.follow-link:focus {
+  background-color: var(--accent-color);
+}
+
+
 
 /* portfolio */
 
@@ -429,4 +573,10 @@ header
   font-size: 16px;
   line-height: 1.9;
   letter-spacing: 0.03em;
+}
+
+.projects> .list-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+  0px 4px 4px rgba(0, 0, 0, 0.06),
+  1px 4px 6px rgba(0, 0, 0, 0.16);
 }
