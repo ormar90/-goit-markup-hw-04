@@ -418,6 +418,7 @@ header
 }
 
 .footer .container {
+  align-items: baseline;
   display: flex;
 }
 
@@ -468,7 +469,7 @@ header
   margin-left: 70px;
 }
 
-.footer-follow-paragraph {
+.footer-follow-paragraph {  
   margin-bottom: 20px;
   font-weight: 700;
   font-size: 14px;
