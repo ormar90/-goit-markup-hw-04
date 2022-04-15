@@ -174,10 +174,10 @@ header
 
 .hero {
   background-color: var(--dark-background-color);
-  background-image: linear-gradient(
-    rgba(47, 48, 58, 0.4), 
-    rgba(47, 48, 58, 0.4));
-  background-image: url(../images/hero-img.jpg);
+  background-image:
+  linear-gradient(rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4)),
+    url(../images/hero-img.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -226,12 +226,11 @@ header
 
 /* specifics */
 
-.specifics-icon {
+.specifics-thumb {
   background-color: var(--gray-background);
   border-radius: 4px;
   height: 120px;
   width: 270px;
-  padding: 25px 100px;
   margin-bottom: 30px;
   display: flex;
   justify-content: center;
@@ -577,7 +576,12 @@ header
   color: var(--text-color);
 }
 
-.projects> .list-item:hover {
+.project-link {
+  display: block;
+}
+
+.project-link:hover,
+.project-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
   0px 4px 4px rgba(0, 0, 0, 0.06),
   1px 4px 6px rgba(0, 0, 0, 0.16);
